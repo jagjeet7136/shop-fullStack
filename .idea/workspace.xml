@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76779d96-28bd-4409-8740-b2752fda1618" name="Changes" comment="" />
+    <list default="true" id="76779d96-28bd-4409-8740-b2752fda1618" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/shop-frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/shop-frontend/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
