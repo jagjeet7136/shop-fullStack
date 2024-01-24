@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Setter
 @RequiredArgsConstructor
 @DynamicUpdate
-@Table(name = "home_offers")
+@Table(name = "top_selling_products")
 public class TopSellingProducts {
 
     @Id
@@ -20,5 +20,10 @@ public class TopSellingProducts {
 
     private String imageUrl;
 
-    private String description;
+    private String name;
+
+    private Integer ratings;
+
+    private Double price;
+
 }
