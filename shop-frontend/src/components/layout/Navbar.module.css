@@ -1,0 +1,38 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav img {
+  width: 100px;
+}
+
+.searchContainer {
+  display: flex;
+  position: relative;
+  width: 300px;
+}
+
+.searchContainer input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.searchContainer button[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #333;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.searchContainer button[type="submit"] i {
+  font-size: 18px;
+}

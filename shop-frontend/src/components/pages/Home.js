@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
-import apiService from '../../services/apiService'; // Adjust the path accordingly
+import apiService from '../../services/apiService';
+import { Navbar } from "../layout/Navbar";
 
 export const Home = () => {
     useEffect(() => {
-        const fetchDataFromApi = () => {
+        const fetchDataFromApi = async () => {
             try {
-                const endpoint = 'http://localhost:8989/home'; // Replace with your actual endpoint
+                const endpoint = 'http://localhost:8989/home';
                 const requestBody = { /* your request body */ };
-                const responseData = apiService.getWithoutBodyAndToken(endpoint);
+                const responseData = await apiService.getWithoutBodyAndToken(endpoint);
                 console.log('Data from API:', responseData);
             } catch (error) {
                 console.error('Error:', error);
@@ -18,8 +19,6 @@ export const Home = () => {
     }, []);
 
     return (
-        <div>
-            <p>This is the home page</p>
-        </div>
+        <Navbar />
     );
 };
