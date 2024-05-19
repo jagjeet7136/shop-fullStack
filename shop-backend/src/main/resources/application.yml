@@ -12,6 +12,7 @@ spring:
     generate-ddl: true
     hibernate.ddl-auto: update
     show-sql: true
+    open-in-view: false
     properties:
       hibernate:
         format-sql: true
@@ -19,3 +20,8 @@ spring:
 application:
   title: shop-fullStack
   version: 1.0.0
+
+security:
+  jwt:
+    secret-key: a5515b85c4d837ea3633b8b31419f4a20c7d1771750721bd8f276a05d67a1bdb
+    expiration-time: 3600000
