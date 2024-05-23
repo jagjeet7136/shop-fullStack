@@ -35,8 +35,7 @@ public class UserController {
     private JwtService jwtService;
 
     @PostMapping("/register")
-    public ResponseEntity<User> createUser(@Valid @RequestBody UserCreateRequest userCreateRequest) throws
-            ValidationException, UserAlreadyExistsException {
+    public ResponseEntity<User> createUser(@Valid @RequestBody UserCreateRequest userCreateRequest){
         log.info("Request received for new user creation {}", userCreateRequest);
         User user = authenticationService.createUser(userCreateRequest);
         log.info("User created successfully {}", user);

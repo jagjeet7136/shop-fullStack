@@ -4,7 +4,6 @@ import com.app.shop.model.dto.ApiErrorDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -54,7 +53,7 @@ public class CustomExceptionHandler {
     }
 
     @ExceptionHandler(DateTimeParseException.class)
-    public ResponseEntity<ApiErrorDTO> handleDateTimeParseException(HttpServletRequest req, NotFoundException ex) {
+    public ResponseEntity<ApiErrorDTO> handleDateTimeParseException(HttpServletRequest req, DateTimeParseException ex) {
         ApiErrorDTO apiErrorDTO = handleAllExceptions(ex);
         apiErrorDTO.setStatus(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(apiErrorDTO, HttpStatus.NOT_FOUND);
@@ -62,32 +61,19 @@ public class CustomExceptionHandler {
 
     @ExceptionHandler(UserAlreadyExistsException.class)
     public ResponseEntity<ApiErrorDTO> handleUserAlreadyExistsException(HttpServletRequest req,
-                                                                            NotFoundException ex) {
+                                                                            UserAlreadyExistsException ex) {
         ApiErrorDTO apiErrorDTO = handleAllExceptions(ex);
         apiErrorDTO.setStatus(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(apiErrorDTO, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler(PasswordsDoNotMatchException.class)
-    public ResponseEntity<ApiErrorDTO> handlePasswordsDoNotMatchException(HttpServletRequest req, NotFoundException ex) {
+    public ResponseEntity<ApiErrorDTO> handlePasswordsDoNotMatchException(HttpServletRequest req,
+                                                                          PasswordsDoNotMatchException ex) {
         ApiErrorDTO apiErrorDTO = handleAllExceptions(ex);
         apiErrorDTO.setStatus(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(apiErrorDTO, HttpStatus.BAD_REQUEST);
     }
-
-//    @ExceptionHandler(BindException.class)
-//    public ResponseEntity<ApiErrorDTO> handleBindException(BindException bindException){
-//        BindingResult bindingResult = bindException.getBindingResult();
-//        List<FieldError> fieldErrors = bindingResult.getFieldErrors();
-//        List<String> errorDetails = new ArrayList<>();
-//        for (FieldError fieldError : fieldErrors) {
-//            errorDetails.add(fieldError.getDefaultMessage());
-//        }
-//        ApiErrorDTO errorResponse = handleAllExceptions(bindException);
-//        errorResponse.setStatus(HttpStatus.BAD_REQUEST);
-//        errorResponse.setErrors(errorDetails);
-//        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
-//    }
 
     private static ApiErrorDTO handleAllExceptions(Exception ex) {
         ApiErrorDTO apiErrorDTO = new ApiErrorDTO();
