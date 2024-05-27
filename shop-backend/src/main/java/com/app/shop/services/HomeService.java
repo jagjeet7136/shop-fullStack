@@ -1,13 +1,13 @@
 package com.app.shop.services;
 
-import com.app.shop.model.BannerImagesModel;
-import com.app.shop.model.HomeOfferCategoryPromiseModel;
-import com.app.shop.model.HomeProductsModel;
+import com.app.shop.model.dto.BannerImagesDTO;
+import com.app.shop.model.dto.HomeOfferCategoryDTO;
+import com.app.shop.model.dto.HomeProductsDTO;
 import com.app.shop.repositories.BannerImagesRepository;
 import com.app.shop.repositories.CategoriesRepository;
 import com.app.shop.repositories.HomeOffersRepository;
 import com.app.shop.repositories.TopSellingProductsRepository;
-import com.app.shop.response.HomeResponse;
+import com.app.shop.model.response.HomeResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,13 +42,13 @@ public class HomeService {
 
     public HomeResponse getHomepage() {
         HomeResponse homeResponse = new HomeResponse();
-        homeResponse.setBannerImages(mapEntityListToModelList(bannerImagesRepository.findAll(), BannerImagesModel.class));
+        homeResponse.setBannerImages(mapEntityListToModelList(bannerImagesRepository.findAll(), BannerImagesDTO.class));
         homeResponse.setCategories(mapEntityListToModelList(categoriesRepository.findAll(),
-                HomeOfferCategoryPromiseModel.class));
+                HomeOfferCategoryDTO.class));
         homeResponse.setLatestOffers(mapEntityListToModelList(homeOffersRepository.findAll(),
-                HomeOfferCategoryPromiseModel.class));
+                HomeOfferCategoryDTO.class));
         homeResponse.setTopSellingProducts(mapEntityListToModelList(topSellingProductsRepository.findAll(),
-                HomeProductsModel.class));
+                HomeProductsDTO.class));
         return homeResponse;
     }
 

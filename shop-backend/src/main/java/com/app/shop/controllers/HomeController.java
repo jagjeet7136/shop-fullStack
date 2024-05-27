@@ -1,6 +1,6 @@
 package com.app.shop.controllers;
 
-import com.app.shop.response.HomeResponse;
+import com.app.shop.model.response.HomeResponse;
 import com.app.shop.services.HomeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
