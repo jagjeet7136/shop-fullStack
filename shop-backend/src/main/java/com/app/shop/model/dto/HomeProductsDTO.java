@@ -6,9 +6,14 @@ import lombok.Data;
 public class HomeProductsDTO {
 
     private String imageUrl;
+
     private String imageDescription;
+
     private String name;
+
     private Integer ratings;
+
     private Double price;
+
     private Double originalPrice;
 }

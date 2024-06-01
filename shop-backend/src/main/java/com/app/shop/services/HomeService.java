@@ -1,12 +1,7 @@
 package com.app.shop.services;
 
-import com.app.shop.model.dto.BannerImagesDTO;
-import com.app.shop.model.dto.HomeOfferCategoryDTO;
-import com.app.shop.model.dto.HomeProductsDTO;
-import com.app.shop.repositories.BannerImagesRepository;
-import com.app.shop.repositories.CategoriesRepository;
-import com.app.shop.repositories.HomeOffersRepository;
-import com.app.shop.repositories.TopSellingProductsRepository;
+import com.app.shop.model.dto.*;
+import com.app.shop.repositories.*;
 import com.app.shop.model.response.HomeResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -20,16 +15,25 @@ import java.util.stream.Collectors;
 public class HomeService {
 
     @Autowired
-    private BannerImagesRepository bannerImagesRepository;
+    private BannerImageRepository bannerImageRepository;
 
     @Autowired
-    private CategoriesRepository categoriesRepository;
+    private CategoryRepository categoryRepository;
 
     @Autowired
-    private HomeOffersRepository homeOffersRepository;
+    private HomeOfferRepository homeOfferRepository;
 
     @Autowired
-    private TopSellingProductsRepository topSellingProductsRepository;
+    private TopSellingProductRepository topSellingProductRepository;
+
+    @Autowired
+    private AdBannerRepository adBannerRepository;
+
+    @Autowired
+    private LinearProductRepository linearProductRepository;
+
+    @Autowired
+    private ProductsBannerRepository productsBannerRepository;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -42,13 +46,17 @@ public class HomeService {
 
     public HomeResponse getHomepage() {
         HomeResponse homeResponse = new HomeResponse();
-        homeResponse.setBannerImages(mapEntityListToModelList(bannerImagesRepository.findAll(), BannerImagesDTO.class));
-        homeResponse.setCategories(mapEntityListToModelList(categoriesRepository.findAll(),
+        homeResponse.setBannerImages(mapEntityListToModelList(bannerImageRepository.findAll(), BannerImagesDTO.class));
+        homeResponse.setCategories(mapEntityListToModelList(categoryRepository.findAll(),
                 HomeOfferCategoryDTO.class));
-        homeResponse.setLatestOffers(mapEntityListToModelList(homeOffersRepository.findAll(),
+        homeResponse.setLatestOffers(mapEntityListToModelList(homeOfferRepository.findAll(),
                 HomeOfferCategoryDTO.class));
-        homeResponse.setTopSellingProducts(mapEntityListToModelList(topSellingProductsRepository.findAll(),
+        homeResponse.setTopSellingProducts(mapEntityListToModelList(topSellingProductRepository.findAll(),
                 HomeProductsDTO.class));
+        homeResponse.setAdBanners(mapEntityListToModelList(adBannerRepository.findAll(), AdBannerDTO.class));
+        homeResponse.setLinearProductsDTO(mapEntityListToModelList(linearProductRepository.findAll(),
+                LinearProductsDTO.class));
+        homeResponse.setProductsBannerDTO(null);
         return homeResponse;
     }
 

@@ -11,14 +11,18 @@ import org.hibernate.annotations.DynamicUpdate;
 @Setter
 @RequiredArgsConstructor
 @DynamicUpdate
-@Table(name = "banner_images")
-public class BannerImages {
+@Table(name = "linear_products")
+public class LinearProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String imageUrl;
+    private String heading;
 
-    private String description;
+    private String offer;
+
+    private String price;
+
+    private String productName;
 }

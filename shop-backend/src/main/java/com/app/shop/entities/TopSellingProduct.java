@@ -11,8 +11,8 @@ import org.hibernate.annotations.DynamicUpdate;
 @Setter
 @RequiredArgsConstructor
 @DynamicUpdate
-@Table(name = "categories")
-public class Categories {
+@Table(name = "top_selling_products")
+public class TopSellingProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +21,10 @@ public class Categories {
     private String imageUrl;
 
     private String name;
+
+    private Integer ratings;
+
+    private Double price;
+
+
 }

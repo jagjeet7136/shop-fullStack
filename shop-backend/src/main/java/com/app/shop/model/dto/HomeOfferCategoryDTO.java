@@ -6,6 +6,8 @@ import lombok.Data;
 public class HomeOfferCategoryDTO {
 
     private String imageUrl;
+
     private String imageDescription;
+
     private String description;
 }

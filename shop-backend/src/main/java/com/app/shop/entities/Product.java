@@ -1,18 +1,17 @@
 package com.app.shop.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
 @Getter
 @Setter
 @RequiredArgsConstructor
-@DynamicUpdate
-@Table(name = "top_selling_products")
-public class TopSellingProducts {
+@Table(name = "products")
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +19,16 @@ public class TopSellingProducts {
 
     private String imageUrl;
 
-    private String name;
+    private String imageDescription;
 
-    private Integer ratings;
+    private String name;
 
     private Double price;
 
+    private String description;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    @JsonIgnore
+    private Category category;
 }

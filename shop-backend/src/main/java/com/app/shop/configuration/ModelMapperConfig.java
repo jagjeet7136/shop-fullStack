@@ -1,6 +1,6 @@
 package com.app.shop.configuration;
 
-import com.app.shop.entities.Categories;
+import com.app.shop.entities.Category;
 import com.app.shop.model.dto.HomeOfferCategoryDTO;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
@@ -21,7 +21,7 @@ public class ModelMapperConfig {
         return modelMapper;
     }
 
-    transient PropertyMap<Categories, HomeOfferCategoryDTO> changeCategoriesMapping = new PropertyMap<>() {
+    transient PropertyMap<Category, HomeOfferCategoryDTO> changeCategoriesMapping = new PropertyMap<>() {
         @Override
         protected void configure() {
             map().setDescription(source.getName());

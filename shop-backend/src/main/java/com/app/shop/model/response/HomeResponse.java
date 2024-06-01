@@ -1,21 +1,24 @@
 package com.app.shop.model.response;
 
-import com.app.shop.model.dto.BannerImagesDTO;
-import com.app.shop.model.dto.HomeOfferCategoryDTO;
-import com.app.shop.model.dto.HomeProductsDTO;
+import com.app.shop.model.dto.*;
 import lombok.Data;
 import java.util.List;
 
 @Data
 public class HomeResponse {
 
-    List<BannerImagesDTO> bannerImages;
+    private List<BannerImagesDTO> bannerImages;
 
-    List<HomeOfferCategoryDTO> latestOffers;
+    private List<HomeOfferCategoryDTO> latestOffers;
 
-    List<HomeOfferCategoryDTO> categories;
+    private List<HomeOfferCategoryDTO> categories;
 
-    List<HomeProductsDTO> topSellingProducts;
+    private List<HomeProductsDTO> topSellingProducts;
 
+    private List<AdBannerDTO> adBanners;
+
+    private List<LinearProductsDTO> linearProductsDTO;
+
+    private List<ProductsBannerDTO> productsBannerDTO;
 
 }
