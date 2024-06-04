@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -20,9 +22,8 @@ public class LinearProduct {
 
     private String heading;
 
-    private String offer;
+    private String description;
 
-    private String price;
-
-    private String productName;
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "linearProduct", orphanRemoval = true)
+    private List<Product> products;
 }

@@ -28,7 +28,25 @@ public class Product {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
-    @JsonIgnore
+    @JoinColumn(name = "category_id")
     private Category category;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "linear_product_id")
+    @JsonIgnore
+    private LinearProduct linearProduct;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "home_offer_product_id")
+    @JsonIgnore
+    private HomeOfferProduct homeOfferProduct;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "products_banner_id")
+    @JsonIgnore
+    private ProductsBanner productsBanner;
+
+    @OneToOne(mappedBy = "product", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private TopSellingProduct topSellingProduct;
 }

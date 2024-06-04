@@ -46,17 +46,17 @@ public class HomeService {
 
     public HomeResponse getHomepage() {
         HomeResponse homeResponse = new HomeResponse();
-        homeResponse.setBannerImages(mapEntityListToModelList(bannerImageRepository.findAll(), BannerImagesDTO.class));
-        homeResponse.setCategories(mapEntityListToModelList(categoryRepository.findAll(),
-                HomeOfferCategoryDTO.class));
-        homeResponse.setLatestOffers(mapEntityListToModelList(homeOfferRepository.findAll(),
-                HomeOfferCategoryDTO.class));
-        homeResponse.setTopSellingProducts(mapEntityListToModelList(topSellingProductRepository.findAll(),
-                HomeProductsDTO.class));
-        homeResponse.setAdBanners(mapEntityListToModelList(adBannerRepository.findAll(), AdBannerDTO.class));
-        homeResponse.setLinearProductsDTO(mapEntityListToModelList(linearProductRepository.findAll(),
-                LinearProductsDTO.class));
-        homeResponse.setProductsBannerDTO(null);
+//        homeResponse.setBannerImages(mapEntityListToModelList(bannerImageRepository.findAll(), BannerImagesDTO.class));
+//        homeResponse.setCategories(mapEntityListToModelList(categoryRepository.findAll(),
+//                HomeOfferCategoryDTO.class));
+//        homeResponse.setLatestOffers(mapEntityListToModelList(homeOfferRepository.findAll(),
+//                HomeOfferCategoryDTO.class));
+//        homeResponse.setTopSellingProducts(mapEntityListToModelList(topSellingProductRepository.findAll(),
+//                HomeProductsDTO.class));
+//        homeResponse.setAdBanners(mapEntityListToModelList(adBannerRepository.findAll(), AdBannerDTO.class));
+//        homeResponse.setLinearProductsDTO(mapEntityListToModelList(linearProductRepository.findAll(),
+//                LinearProductsDTO.class));
+//        homeResponse.setProductsBannerDTO(null);
         return homeResponse;
     }
 

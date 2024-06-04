@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -25,8 +27,6 @@ public class HomeOfferProduct {
 
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "products_banner_id")
-    @JsonIgnore
-    private ProductsBanner productsBanner;
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "homeOfferProduct", orphanRemoval = true)
+    private List<Product> products;
 }

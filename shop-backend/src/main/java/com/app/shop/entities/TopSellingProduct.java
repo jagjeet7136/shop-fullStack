@@ -18,13 +18,8 @@ public class TopSellingProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String imageUrl;
-
-    private String name;
-
-    private Integer ratings;
-
-    private Double price;
-
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id", unique = true)
+    private Product product;
 
 }

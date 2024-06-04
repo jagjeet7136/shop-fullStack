@@ -26,5 +26,5 @@ public class ProductsBanner {
     private String buttonText;
 
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "productsBanner", orphanRemoval = true)
-    private List<HomeOfferProduct> products;
+    private List<Product> products;
 }
