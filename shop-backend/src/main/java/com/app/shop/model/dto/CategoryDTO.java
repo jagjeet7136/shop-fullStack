@@ -3,7 +3,7 @@ package com.app.shop.model.dto;
 import lombok.Data;
 
 @Data
-public class HomeOfferCategoryDTO {
+public class CategoryDTO {
 
     private String imageUrl;
 

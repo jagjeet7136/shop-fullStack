@@ -1,15 +1,14 @@
 package com.app.shop.model.dto;
 
 import lombok.Data;
+import java.util.List;
 
 @Data
 public class LinearProductsDTO {
 
     private String heading;
 
-    private String offer;
+    private String description;
 
-    private String price;
-
-    private String productName;
+    private List<ProductDTO> productDTOS;
 }

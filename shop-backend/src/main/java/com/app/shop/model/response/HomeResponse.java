@@ -7,18 +7,18 @@ import java.util.List;
 @Data
 public class HomeResponse {
 
+    private List<AdBannerDTO> adBanners;
+
     private List<BannerImagesDTO> bannerImages;
 
-    private List<HomeOfferCategoryDTO> latestOffers;
+    private List<CategoryDTO> categories;
 
-    private List<HomeOfferCategoryDTO> categories;
-
-    private List<HomeProductsDTO> topSellingProducts;
-
-    private List<AdBannerDTO> adBanners;
+    private List<ProductDTO> topSellingProducts;
 
     private List<LinearProductsDTO> linearProductsDTO;
 
     private List<ProductsBannerDTO> productsBannerDTO;
+
+    private List<ProductDTO> latestOffers;
 
 }

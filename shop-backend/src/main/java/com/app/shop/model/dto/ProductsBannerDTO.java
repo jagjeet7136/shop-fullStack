@@ -12,5 +12,5 @@ public class ProductsBannerDTO {
 
     private String buttonText;
 
-    private List<HomeProductsDTO> products;
+    private List<ProductDTO> products;
 }

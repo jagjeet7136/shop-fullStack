@@ -27,6 +27,8 @@ public class Product {
 
     private String description;
 
+    private Double ratings;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
@@ -39,7 +41,7 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "home_offer_product_id")
     @JsonIgnore
-    private HomeOfferProduct homeOfferProduct;
+    private ProductOffer productOffer;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "products_banner_id")
