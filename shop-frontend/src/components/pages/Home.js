@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import apiService from '../../services/apiService';
 import { Navbar } from "../layout/Navbar";
+//This is new comment
 
 export const Home = () => {
     useEffect(() => {
